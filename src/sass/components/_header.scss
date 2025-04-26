@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  font-family: gothampro, sans-serif;
+  justify-content: center;
+  text-align: center;
+
+  &__logo {
+    margin: 32px 126px 32px 0;
+    align-self: center;
+
+    img {
+      width: 60px;
+      height: 16px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+
+    &--blue {
+      color: #055A8E;
+      opacity: 80%;
+      text-decoration: none;
+    }
+
+    &--white {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 55px;
+    }
+
+    li {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__phone {
+    align-self: center;
+    margin-left: 72px;
+
+    p {
+      font-family: gothampro, sans-serif;
+      line-height: 22px;
+      font-size: 20px;
+    }
+  }
+}
