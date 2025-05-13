@@ -1,41 +1,63 @@
 :root {
-  line-height: 1.5;
-  font-family: gothampro, sans-serif;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  --line-height: 1.5;
+  --font-family: gothampro, sans-serif;
+  --font-weight: 400;
+
+  --header-text-color: #000000;
+  --header-logo-filter: brightness(0);
+
+  --footer-text-color: #000000;
+  --footer-border-color: #000000;
+  --foter-image-filter: brightness(0);
+
+
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+}
+
+:root.dark {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
+  --header-text-color: #ffffff;
+  --header-logo-filter: none;
+  --footer-text-color: #ffffff;
+  --footer-border-color: #ffffff;
+  --foter-image-filter: none;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro.ttf") format("truetype");
+  src: url("/fonts/gothampro.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_black.ttf") format("truetype");
+  src: url("/fonts/gothampro_black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_blackitalic.ttf") format("truetype");
+  src: url("/fonts/gothampro_blackitalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_bold.ttf") format("truetype");
+  src: url("/fonts/gothampro_bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -43,48 +65,58 @@
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_bolditalic.ttf") format("truetype");
+  src: url("/fonts/gothampro_bolditalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_italic.ttf") format("truetype");
+  src: url("/fonts/gothampro_italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_medium.ttf") format("truetype");
+  src: url("/fonts/gothampro_medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_mediumitalic.ttf") format("truetype");
+  src: url("/fonts/gothampro_mediumitalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_light.ttf") format("truetype");
+  src: url("/fonts/gothampro_light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "gothampro";
-  src: url("/public/fonts/gothampro_lightitalic.ttf") format("truetype");
+  src: url("/fonts/gothampro_lightitalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
+}
+
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -115,17 +147,4 @@ button:focus-visible {
   max-width: 1550px;
   margin: 0 auto;
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

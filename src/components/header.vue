@@ -1,21 +1,19 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <div class="header">
+  <div class="header" id="header">
     <div class="header__logo">
-      <img src="../assets/logo-white.png" alt="Лого">
+      <router-link to="/">
+        <img src="../assets/logo-white.png" alt="Лого">
+      </router-link>
     </div>
     <div class="header__links">
-      <ul>
-        <li><router-link class="header__links--blue" to="Main">Проекты</router-link></li>
-        <li><router-link class="header__links--blue" to="Main">Бани и сауны</router-link></li>
-        <li><router-link class="header__links--blue" to="Main">Wellness и SPA</router-link></li>
-        <li><router-link class="header__links--blue" to="Main">Бассейны</router-link></li>
-        <li><router-link class="header__links--white" to="Main">О компании</router-link></li>
-        <li><router-link class="header__links--white" to="Main">Как мы работаем</router-link></li>
-        <li><router-link class="header__links--white" to="Main">Контакты</router-link></li>
+      <ul class="menu">
+        <li><router-link class="header__links--blue" to="/">Проекты</router-link></li>
+        <li><router-link class="header__links--blue" to="/">Бани и сауны</router-link></li>
+        <li><router-link class="header__links--blue" to="/">Wellness и SPA</router-link></li>
+        <li><router-link class="header__links--blue" to="/">Бассейны</router-link></li>
+        <li><router-link class="header__links--white" to="/">О компании</router-link></li>
+        <li><router-link class="header__links--white" to="/work">Как мы работаем</router-link></li>
+        <li><router-link class="header__links--white" to="/">Контакты</router-link></li>
       </ul>
     </div>
     <div class="header__phone">
@@ -23,3 +21,44 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { gsap } from "gsap";
+import { onMounted } from "vue";
+
+function redirect() {
+  window.scrollTo(0, 0)
+  window.location.href = '/work'
+}
+
+onMounted(() => {
+  const tl = gsap.timeline()
+
+  .fromTo('.header__logo', {
+    y: -50,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+  })
+  tl.fromTo('.menu li', {
+    y: -50,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+    stagger: 0.10,
+  })
+  .fromTo('.header__phone', {
+    y: -50,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+  })
+})
+
+</script>

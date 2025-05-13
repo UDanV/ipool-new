@@ -31,7 +31,3 @@ const redirect = () => {
     </div>
   </section>
 </template>
-
-<style scoped>
-
-</style>

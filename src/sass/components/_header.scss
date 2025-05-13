@@ -1,5 +1,8 @@
 .header {
   display: flex;
+  align-items: center;
+  max-width: 1550px;
+  margin: auto;
   font-family: gothampro, sans-serif;
   justify-content: center;
   text-align: center;
@@ -11,6 +14,7 @@
     img {
       width: 60px;
       height: 16px;
+      filter: var(--header-logo-filter);
     }
   }
 
@@ -25,7 +29,7 @@
     }
 
     &--white {
-      color: #ffffff;
+      color: var(--header-text-color);
       text-decoration: none;
     }
 

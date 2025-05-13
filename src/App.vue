@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import './sass/all.scss';
-import './sass/style.scss'
-
 </script>
 
 <template>

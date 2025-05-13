@@ -1,5 +1,6 @@
 .footer {
-  border: 1px solid #ffffff;
+  border: 1px solid;
+  border-color: var(--footer-border-color);
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
@@ -9,13 +10,15 @@
   &__header {
     display: grid;
     grid-template-rows: auto;
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid;
+    border-right-color: var(--footer-border-color);
 
     img {
       align-self: end;
       justify-self: right;
       max-width: 100%;
       margin-right: 230px;
+      filter: var(--foter-image-filter);
     }
   }
 
@@ -29,15 +32,18 @@
       width: 193px;
       height: 193px;
       background-color: transparent;
-      border: 1px solid #ffffff;
+      border: 1px solid;
+      border-color: var(--footer-border-color);
       border-radius: 50%;
     }
   }
 
   &__contacts {
     display: inline-block;
-    border-right: 1px solid #ffffff;
-    border-top: 1px solid #ffffff;
+    border-right: 1px solid;
+    border-right-color: var(--footer-border-color);
+    border-top: 1px solid;
+    border-top-color: var(--footer-border-color);
     text-align: left;
     padding-left: 200px;
 
@@ -47,7 +53,8 @@
     }
 
     a {
-      color: #ffffff;
+      width: auto;
+      color: var(--footer-text-color);
       text-decoration: none;
     }
   }
@@ -60,7 +67,8 @@
   }
 
   &__map {
-    border-top: 1px solid #ffffff;
+    border-top-color: var(--footer-border-color);
+    border-top: 1px solid;
 
     .map {
       margin: 25px 30px 0;
