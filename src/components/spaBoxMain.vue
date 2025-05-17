@@ -67,7 +67,7 @@ onMounted(() => {
       </h1>
     </div>
     <h2 class="spa-box__subtitle">
-      Именно то &nbsp; &nbsp; &nbsp; &nbsp; место, где надо &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; отдыхать!
+      Именно то<span class="space" aria-hidden="true"></span>место, где надо<span class="space" aria-hidden="true"></span>отдыхать!
     </h2>
   </section>
 </template>
@@ -98,6 +98,11 @@ onMounted(() => {
     z-index: 11;
     line-height: 100%;
     margin-bottom: 100px;
+
+    .space {
+      display: inline-block;
+      width: 250px;
+    }
   }
 
   &__footer {
@@ -136,6 +141,85 @@ onMounted(() => {
         z-index: 1;
         opacity: 1;
       }
+    }
+  }
+}
+
+@media (max-width: 1365px) {
+  .spa-box {
+    &__title {
+      .title {
+        font-size: 120px;
+        line-height: 0.8;
+      }
+    }
+
+    &__subtitle {
+      font-size: 70px;
+
+      .space {
+        width: 1em;
+      }
+    }
+
+    &__images {
+      margin: 20px 30px;
+      height: 400px;
+      width: 200px;
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .spa-box {
+    &__title {
+      .title {
+        font-size: 80px;
+        line-height: 0.8;
+      }
+    }
+
+    &__subtitle {
+      font-size: 50px;
+      width: 100%;
+
+      .space {
+        width: 50px;
+      }
+    }
+
+    &__images {
+      bottom: 120px;
+      height: 200px;
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .spa-box {
+    &__title {
+      .title {
+        font-size: 80px;
+        line-height: 0.8;
+      }
+    }
+
+    &__subtitle {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 25px;
+
+      .space {
+        width: 30px;
+      }
+    }
+
+    &__images {
+      height: 100px;
+      width: 50px;
+      margin: 0;
     }
   }
 }

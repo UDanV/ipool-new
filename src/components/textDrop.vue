@@ -341,4 +341,49 @@ export default defineComponent({
     transform: translateY(0);
   }
 }
+
+@media (max-width: 1365px) {
+  .menu-container {
+    margin: 0;
+  }
+
+  .content-icon {
+    display: none;
+  }
+
+  .item-content {
+    p {
+      margin-left: 100px;
+      max-width: 100%;
+    }
+
+    .under {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .content-image-right {
+    display: none;
+  }
+
+  .item-content p {
+    margin-left: 0;
+  }
+
+  .image-link {
+    width: 100px;
+  }
+
+  .item-number {
+    margin: 0 75px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-link {
+    display: none;
+  }
+}
 </style>

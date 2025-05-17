@@ -4,7 +4,7 @@
   &__title {
 
     img {
-      width: 100%;
+      width: auto;
       background-size: cover;
     }
   }
@@ -47,6 +47,7 @@
     }
 
     p {
+      display: flex;
       margin: 60px 20px 0;
       font-size: 20px;
       font-weight: 300;
@@ -177,8 +178,7 @@
     }
 
     .menu-container {
-      max-width: 90% !important;
-      margin: 100px 150px auto !important;
+      width: 80%;
       border: 1px solid #000000 !important;
     }
 
@@ -219,6 +219,10 @@
     &--text {
       display: flex;
       justify-content: space-between;
+
+      h5 {
+        font-weight: 400;
+      }
     }
 
     &--card {
@@ -271,9 +275,262 @@
     margin-top: 350px;
     padding-top: 250px;
     padding-bottom: 250px;
+  }
+}
 
-    #main {
-      margin: 0 200px 72px 200px;
+@media (max-width: 1365px) {
+  .main {
+    &__title {
+      margin: 11px;
+
+      img {
+        max-width: 100%;
+        background-size: contain;
+        margin: auto;
+        border-radius: 6px;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__text {
+      h2 {
+        font-size: 100px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__about {
+      h2 {
+        text-align: center;
+        margin: auto;
+      }
+    }
+
+    &__info {
+      .info {
+        display: block;
+        margin: auto;
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    &__card {
+
+      p {
+        margin-bottom: 20px;
+
+        img {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    &__team {
+      width: auto;
+
+      &--text {
+        margin-left: 0;
+
+        img {
+          display: none;
+        }
+      }
+    }
+
+    &__works {
+      margin: 15px;
+
+      &--text {
+        p {
+          display: none;
+        }
+      }
+    }
+
+    &__spabox {
+      padding-top: 125px;
+      padding-bottom: 125px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    &__text {
+      h2 {
+        font-size: 70px;
+      }
+
+      &--small {
+        font-size: 12px;
+      }
+    }
+
+    &__card {
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 15px;
+
+        img {
+          margin-left: 10px;
+          width: 10%;
+        }
+      }
+    }
+
+    &__team {
+      padding: 30px;
+
+      &--text p {
+        font-size: 30px;
+      }
+
+      .menu-container {
+        width: 100%;
+      }
+    }
+
+    &__works {
+      &--text {
+        h2 {
+          font-size: 30px;
+        }
+      }
+    }
+
+    &__fact {
+      margin-left: 15px;
+      margin-right: 15px;
+
+      &--text {
+        justify-content: center;
+
+        h5 {
+          display: none;
+        }
+      }
+
+      &--card {
+        .title {
+          font-size: 65px;
+        }
+
+        .subtitle {
+          font-size: 30px;
+        }
+
+        .fact {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    &__text {
+      h2 {
+        font-size: 60px;
+      }
+
+      &--small {
+        font-size: 10px;
+      }
+    }
+
+    &__card {
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 10px;
+
+        img {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    &__about {
+      margin-left: 15px;
+      margin-right: 15px;
+
+      h2 {
+        font-size: 25px;
+        text-align: left;
+
+        img {
+          display: none;
+        }
+
+        .mask {
+          display: inline-block;
+        }
+      }
+
+      button {
+        margin: auto;
+
+        img {
+          display: none;
+        }
+      }
+    }
+
+    &__team {
+      padding: 15px;
+      background-color: transparent;
+
+      &--text p {
+        font-size: 24px;
+      }
+    }
+
+    &__info {
+      .info {
+        display: block;
+        font-size: 13px;
+      }
+    }
+
+    &__works {
+      &--text {
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__fact {
+      &--card {
+        .title {
+          font-size: 50px;
+        }
+
+        .subtitle {
+          font-size: 20px;
+        }
+
+        .fact {
+          font-size: 16px;
+        }
+      }
     }
   }
 }

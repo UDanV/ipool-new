@@ -39,4 +39,22 @@ withDefaults(defineProps<{
   color: #ffffff;
   background-color: #000000;
 }
+
+@media (max-width: 1365px) {
+  .custom-button {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  
+}
+
+@media (max-width: 480px) {
+  .custom-button {
+    padding: 10px;
+    font-size: 10px;
+  }
+}
 </style>

@@ -99,7 +99,7 @@ onMounted(() =>{
       <section class="section">
         <div class="main__fact">
           <div class="main__fact--text">
-            <p>Интересный факт</p>
+            <h5>Интересный факт</h5>
             <div class="main__fact--card">
               <p class="title">43 000 <span>тонн</span>*</p>
               <p class="subtitle">Объём всех бассейнов построенных компанией <br>"iPool"</p>
@@ -107,7 +107,7 @@ onMounted(() =>{
               <p class="fact">Эту цифру можно сравнить
                 с водоизмещением тяжёлого авианесущего крейсера “Адмирал Флота Советского Союза Кузнецов” — <b>47 тыс. тонн.</b></p>
             </div>
-            <p>IPOOL</p>
+            <h5>IPOOL</h5>
           </div>
         </div>
       </section>

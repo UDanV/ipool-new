@@ -101,7 +101,7 @@ function onPointerUp(e: PointerEvent) {
   width: max-content;
   transition: transform 0.3s ease;
   will-change: transform;
-  margin-left: auto;
+  margin-left: 660px;
 }
 
 .slide {
@@ -113,5 +113,11 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 1365px) {
+  .slider-track {
+    margin: 10px;
+  }
 }
 </style>
