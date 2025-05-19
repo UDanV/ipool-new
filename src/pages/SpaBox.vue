@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref} from 'vue';
-import '../sass/components/_spabox.scss';
 import TextDropMenu from "../components/textDrop.vue";
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 import ScrollCards from "../components/scrollableCard.vue";
 import {setupScrollAnimations} from "../plugins/setupScrollAnimations.ts";
 import SpaBoxMain from "../components/spaBoxMain.vue";
+import Slider from "../components/slider.vue";
 
 const images = [
   { id: 1, src: new URL('../assets/spabox1.jpg', import.meta.url).href },
@@ -184,6 +184,7 @@ const setupFloatingParallax = () => {
 
       <section class="section" id="cards">
         <ScrollCards :cards-data="cards" direction="vertical"/>
+        <Slider></Slider>
       </section>
 
       <section class="section" id="textdrop">

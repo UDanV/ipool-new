@@ -3,6 +3,8 @@ import Main from '../pages/Main.vue'
 import Projects from "../pages/Projects.vue";
 import SpaBox from "../pages/SpaBox.vue";
 import Work from '../pages/Work.vue';
+import Contacts from '../pages/Contacts.vue';
+import Pools from '../pages/Pools.vue'
 import notFound from '../pages/404.vue'
 
 export const router = createRouter({
@@ -28,6 +30,16 @@ export const router = createRouter({
             path: '/spa-box',
             name: 'spa-box',
             component: SpaBox,
+        },
+        {
+            path: '/pools',
+            name: 'pools',
+            component: Pools,
+        },
+        {
+            path: '/contacts',
+            name: 'contacts',
+            component: Contacts,
         },
         {
             path: '/:pathMatch(.*)*',

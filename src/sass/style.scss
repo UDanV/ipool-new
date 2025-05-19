@@ -5,6 +5,7 @@
 
   --header-text-color: #000000;
   --header-logo-filter: brightness(0);
+  --header-menu-bg: #ffffff;
 
   --footer-text-color: #000000;
   --footer-border-color: #000000;
@@ -28,6 +29,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #000000;
   --header-text-color: #ffffff;
+  --header-menu-bg: #000000;
   --header-logo-filter: none;
   --footer-text-color: #ffffff;
   --footer-border-color: #ffffff;
@@ -122,6 +124,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+a {
+  color: #000000;
 }
 
 button {

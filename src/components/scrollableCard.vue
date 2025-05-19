@@ -1,5 +1,5 @@
 <template>
-  <section class="section" ref="cardsContainer">
+  <section class="section" ref="cardsContainer" id="scrollable">
     <div class="cards-wrapper">
       <div
           v-for="(card, index) in cardsData"
@@ -115,7 +115,7 @@ export default {
                 duration: 0.8,
                 ease: 'power2.inOut'
               });
-            }
+              }
           });
 
           ScrollTrigger.create({
@@ -326,6 +326,16 @@ export default {
       justify-content: space-between;
       border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .spa-box__cards {
+    &--info {
+      p {
+        font-size: 25px;
+      }
     }
   }
 }

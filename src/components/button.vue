@@ -1,6 +1,6 @@
 <script setup lang="ts">
 withDefaults(defineProps<{
-  theme?: 'blue' | 'black',
+  theme?: 'blue' | 'black' | 'white',
   title: string
 }>(), {
   theme: 'blue',
@@ -10,7 +10,8 @@ withDefaults(defineProps<{
 
 <template>
   <button
-      :class="[theme === 'black' ? 'black-theme' : 'blue-theme']"
+      :class="[theme === 'black' ? 'black-theme' :
+        theme === 'white' ? 'white-theme' : 'blue-theme']"
       class="custom-button"
   >
     <slot>{{ title }}</slot>
@@ -18,7 +19,7 @@ withDefaults(defineProps<{
   </button>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .custom-button {
   margin: auto;
   display: flex;
@@ -38,6 +39,17 @@ withDefaults(defineProps<{
 .black-theme {
   color: #ffffff;
   background-color: #000000;
+}
+
+.white-theme {
+  color: #000;
+  background-color: #ffffff;
+  border-radius: 0;
+  margin: 39px 25px;
+
+  img {
+    filter: brightness(0);
+  }
 }
 
 @media (max-width: 1365px) {
