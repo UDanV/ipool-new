@@ -3,6 +3,7 @@ import Main from '../pages/Main.vue'
 import Projects from "../pages/Projects.vue";
 import SpaBox from "../pages/SpaBox.vue";
 import Work from '../pages/Work.vue';
+import notFound from '../pages/404.vue'
 
 export const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ export const router = createRouter({
             path: '/spa-box',
             name: 'spa-box',
             component: SpaBox,
-        }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: '404',
+            component: notFound,
+        },
     ]
 })
