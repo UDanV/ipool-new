@@ -45,6 +45,7 @@
     border-top: 1px solid;
     border-top-color: var(--footer-border-color);
     text-align: left;
+    padding-left: 200px;
 
     p {
       max-width: 250px;
@@ -84,7 +85,7 @@
   }
 }
 
-@media (max-width: 1365px) {
+@media (max-width: 1600px) {
   .footer {
     &__header {
       img {
@@ -92,6 +93,15 @@
         margin: 15px;
       }
     }
+
+    &__contacts {
+      padding: 15px;
+    }
+  }
+}
+
+@media (max-width: 1365px) {
+  .footer {
 
     &__contacts {
       padding: 15px;
@@ -150,6 +160,7 @@
 @media (max-width: 480px) {
   .footer {
     &__contacts {
+      padding: 5px;
       p {
         font-size: 10px;
         margin-top: 10px;

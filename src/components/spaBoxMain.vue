@@ -101,7 +101,7 @@ onMounted(() => {
 
     .space {
       display: inline-block;
-      width: 250px;
+      width: 70px;
     }
   }
 

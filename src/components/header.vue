@@ -43,7 +43,7 @@ import { gsap } from "gsap";
 import {onMounted, ref, watch} from "vue";
 
 const isMenuOpen = ref(false);
-let menuAnimation: gsap.core.Timeline;
+let menuAnimation: gsap.timeline;
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
