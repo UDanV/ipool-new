@@ -1,0 +1,46 @@
+.contacts {
+  background-position: center;
+  background-size: contain;
+  &__text {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+    font-weight: 300;
+
+    h2 {
+      font-size: 96px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    max-width: 50vw;
+
+    p {
+      font-size: 24px;
+      display: inline-block;
+    }
+
+    a {
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .time {
+      font-weight: bold;
+    }
+
+    .email {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

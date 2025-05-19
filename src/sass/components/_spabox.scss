@@ -332,11 +332,11 @@
   transition: opacity 0.8s ease-out 0.4s;
 }
 
-@media (max-width: 100vw) {
-  .slider-wrapper {
-    display: none;
-  }
-}
+//@media (max-width: 100vw) {
+//  .slider-wrapper {
+//    display: none;
+//  }
+//}
 
 @media (max-width: 1350px) {
   .spa-box {

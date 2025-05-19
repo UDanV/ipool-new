@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref} from 'vue';
-import '../sass/components/_spabox.scss';
 import TextDropMenu from "../components/textDrop.vue";
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
