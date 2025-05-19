@@ -48,11 +48,20 @@ onMounted(() => {
     <section class="section">
       <div class="content__area">
         <div class="content__image">
+          <div class="content__info">
+            <p v-if="activeTab === 'Дизайн'" class="num">( 1 )</p>
+            <p v-if="activeTab === 'Проектирование'" class="num">( 2 )</p>
+            <p v-if="activeTab === 'Стройка'" class="num">( 3 )</p>
+            <p v-if="activeTab === 'Монтаж оборудования'" class="num">( 4 )</p>
+            <p v-if="activeTab === 'Сервисное обслуживание'" class="num">( 5 )</p>
+            <img class="next-slide" src="../assets/lineSlide.svg" alt="nextSlide">
+          </div>
           <img v-if="activeTab === 'Дизайн'" src="../assets/design.gif" alt="Фото процесса" />
           <img v-if="activeTab === 'Проектирование'" src="../assets/engineering.gif" alt="Фото процесса" />
           <img v-if="activeTab === 'Стройка'" src="../assets/building.gif" alt="Фото процесса" />
           <img v-if="activeTab === 'Монтаж оборудования'" src="../assets/spabox4.jpg" alt="Фото процесса" />
           <img v-if="activeTab === 'Сервисное обслуживание'" src="../assets/kuznetsov-cruiser.jpg" alt="Фото процесса" />
+          <p>Как мы работаем</p>
         </div>
 
         <div class="progress-container" v-if="activeTab">
@@ -84,7 +93,7 @@ onMounted(() => {
               <button @click="goToNextTab" class="next-button">Далее →</button>
             </div>
           </div>
-          <div v-else-if="activeTab === 'Проектирование'">
+          <div class="content__text" v-else-if="activeTab === 'Проектирование'">
             <h2>Процесс проектирования</h2>
             <p>Проектирование – это техническая часть работы, направленная на создание детализированной документации для реализации утвержденного дизайна.</p>
             <h3>Техническое задание (ТЗ)</h3>
@@ -110,7 +119,7 @@ onMounted(() => {
               <button @click="goToNextTab" class="next-button">Далее →</button>
             </div>
           </div>
-          <div v-else-if="activeTab === 'Стройка'">
+          <div class="content__text" v-else-if="activeTab === 'Стройка'">
             <h2>Процесс Строительства</h2>
             <p>Процесс строительства включает в себя несколько ключевых этапов, которые обеспечивают успешную реализацию проекта от начальной идеи до окончательной эксплуатации объекта.</p>
             <h3>Подготовительный этап</h3>
@@ -188,14 +197,21 @@ onMounted(() => {
 }
 
 .progress-container {
-  width: 110.203px;
+  width: 109px;
+  min-width: 60px;
   height: 500px;
   background-color: transparent;
-  border-right: 1px solid #000000;
-  border-left: 1px solid #000000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
   position: sticky;
-  left: 980.5px;
+  margin-right: 38px;
+  margin-left: auto;
   overflow: hidden;
+
+  @media (max-width: 1600px) {
+    display: none;
+  }
 }
 
 .water-progress {
@@ -319,6 +335,141 @@ onMounted(() => {
   }
   100% {
     background-position: 0 -1000px;
+  }
+}
+
+@media (max-width: 100vw) {
+  .content__image {
+    p {
+      display: none;
+    }
+
+    .next-slide {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .content__area {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .content__image {
+      position: static;
+      margin: 0;
+      align-self: auto;
+    }
+
+    .content__text-block {
+      max-width: 100%;
+
+      .two-sized {
+        display: block;
+      }
+    }
+  }
+
+  .button-group {
+    justify-content: space-between;
+
+    button {
+      width: 100%;
+      padding: 0.6em 1.2em;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 714px) {
+  .tabs-container {
+    display: none;
+  }
+
+  .next-button-container {
+    .next-button {
+      width: 100%;
+    }
+  }
+
+  .content__area {
+
+    .content__text-block {
+      max-width: 100%;
+      margin: 11px;
+      padding: 0;
+    }
+
+    .content__image {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 88px;
+      max-width: 100%;
+      width: 100%;
+      background: #000000;
+      align-items: center;
+
+      .content__info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 200px;
+      }
+
+      img {
+        width: 250px;
+        height: 250px;
+      }
+
+      p {
+        display: block;
+        font-size: 13px;
+        color: #ffffff;
+        font-style: italic;
+        margin: 0;
+        align-self: end;
+      }
+
+      .num {
+        opacity: 0.4;
+        font-size: 32px;
+        align-self: auto;
+      }
+
+      .next-slide {
+        display: block;
+        width: auto;
+        height: 10%;
+      }
+    }
+  }
+
+  .content__text-block {
+    .content__text {
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 15px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .content__area {
+    .content__image {
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
   }
 }
 </style>

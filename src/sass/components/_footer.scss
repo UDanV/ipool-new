@@ -15,9 +15,10 @@
 
     img {
       align-self: end;
-      justify-self: right;
+      justify-self: left;
+      margin-left: 30%;
+      padding-right: 250px;
       max-width: 100%;
-      margin-right: 230px;
       filter: var(--foter-image-filter);
     }
   }
@@ -39,8 +40,12 @@
   }
 
   &__contacts {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: normal;
     border-right: 1px solid;
+    max-width: 100%;
     border-right-color: var(--footer-border-color);
     border-top: 1px solid;
     border-top-color: var(--footer-border-color);
@@ -62,7 +67,8 @@
   &__links {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    justify-content: left;
+    text-align: left;
     gap: 15px;
   }
 
@@ -89,8 +95,9 @@
   .footer {
     &__header {
       img {
+        margin-left: 0;
+        padding-left: 15px;
         justify-self: left;
-        margin: 15px;
       }
     }
 

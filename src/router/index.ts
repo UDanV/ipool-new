@@ -5,6 +5,7 @@ import SpaBox from "../pages/SpaBox.vue";
 import Work from '../pages/Work.vue';
 import Contacts from '../pages/Contacts.vue';
 import Pools from '../pages/Pools.vue'
+import notFound from '../pages/404.vue'
 
 export const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,11 @@ export const router = createRouter({
             path: '/contacts',
             name: 'contacts',
             component: Contacts,
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: '404',
+            component: notFound,
         },
     ]
 })

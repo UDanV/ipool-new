@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 
 const images = ref<string[]>([
   '/src/assets/spabox1.jpg',
@@ -35,21 +35,34 @@ const images = ref<string[]>([
 ])
 
 const currentIndex = ref(0)
-const slideWidth = 400
 const gap = 26
 const trackRef = ref<HTMLElement | null>(null)
+
+const slideWidth = ref(400)
+
+function checkScreenSize() {
+  slideWidth.value = window.innerWidth <= 475 ? 200 : 400
+}
 
 const currentTranslate = ref(0)
 let startX = 0
 let isDragging = false
 
 const updateTranslate = () => {
-  currentTranslate.value = -(currentIndex.value * (slideWidth + gap))
+  currentTranslate.value = -(currentIndex.value * (slideWidth.value + gap))
 }
 
 watch(currentIndex, updateTranslate)
 
-onMounted(updateTranslate)
+onMounted(() => {
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
+  updateTranslate()
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreenSize)
+})
 
 function onPointerDown(e: PointerEvent) {
   isDragging = true
@@ -59,7 +72,7 @@ function onPointerDown(e: PointerEvent) {
 function onPointerMove(e: PointerEvent) {
   if (!isDragging) return
   const deltaX = e.clientX - startX
-  currentTranslate.value = -(currentIndex.value * (slideWidth + gap)) + deltaX
+  currentTranslate.value = -(currentIndex.value * (slideWidth.value + gap)) + deltaX
 }
 
 function onPointerUp(e: PointerEvent) {
@@ -118,6 +131,16 @@ img {
 @media (max-width: 1365px) {
   .slider-track {
     margin: 10px;
+  }
+}
+
+@media (max-width: 475px) {
+  .slider-track {
+    height: 250px;
+  }
+
+  .slide {
+    flex: 0 0 200px;
   }
 }
 </style>
